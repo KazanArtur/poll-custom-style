@@ -49,10 +49,10 @@ background-image: url('https://kazanartur.github.io/poll-custom-style/pink.png')
 		background-image: url('https://kazanartur.github.io/poll-custom-style/red.png');
 }
 .custom .options li:nth-child(7) {
-	background-image: url('https://kazanartur.github.io/poll-custom-style/orange.png');
+	background-image: url('https://kazanartur.github.io/poll-custom-style/orage.png');
 }
 .custom .options li:nth-child(8) {
-	background-image: url('https://kazanartur.github.io/poll-custom-style/orange.png');
+	background-image: url('https://kazanartur.github.io/poll-custom-style/orage.png');
 }
 
 
@@ -131,6 +131,7 @@ background-image: url('https://kazanartur.github.io/poll-custom-style/pink.png')
 	background-position: center;
 	background-repeat: no-repeat;
 	float: left;
+	color: black;
 	width: 49%;
 	text-align: center;
 	padding: 10px;
@@ -143,6 +144,7 @@ background-image: url('https://kazanartur.github.io/poll-custom-style/pink.png')
 	background-position: center;
 	background-repeat: no-repeat;
 	float: left;
+	color: black;
 	width: 49%;
 	text-align: center;
 	padding: 10px;
