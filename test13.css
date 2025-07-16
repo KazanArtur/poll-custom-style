@@ -112,19 +112,15 @@
 
 /* MetaInfo */
 .custom .metaInfo {
-	display: none !important;
-	height: 0 !important;
-	padding: 0 !important;
-	margin: 0 !important;
-	overflow: hidden !important;
+		background-image: url('https://kazanartur.github.io/poll-custom-style/green.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .custom .total,
 .custom .duration {
-	background-image: url('https://kazanartur.github.io/poll-custom-style/green.png');
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
+
 	float: left;
 	width: 49%;
 	text-align: center;
