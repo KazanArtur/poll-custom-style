@@ -69,16 +69,17 @@
 
 /* Питання */
 .custom .options li.question {
-	background: #ffadad;
-	font-size: 26px;
-	color: #000;
+	background: #000;
+	color: #ff1b1c; /* криваво-червоний */
+	font-size: 36px;
 	text-align: center;
-	box-shadow: 4px 4px 0 #000;
-	font-family: 'Rock Salt', cursive;
-	border: 5px dashed #000;
-	clip-path: none;
-	transform: rotate(-1.5deg);
+	border: 5px dashed #ff00ff;
+	padding: 20px;
+	box-shadow: 5px 5px 0 #ff00ff;
+	text-transform: uppercase;
 	margin-bottom: 25px;
+	font-family: 'Rock Salt', cursive;
+	transform: rotate(-2deg);
 }
 
 /* Help-блок */
