@@ -2,6 +2,9 @@
 
 .custom {
 	background: transparent;
+	background-image: url('https://kazanartur.github.io/poll-custom-style/green.png');
+	background-size: auto;
+	background-position: center;
 	width: 500px;
 	transition: opacity 1s;
 	padding: 10px;
