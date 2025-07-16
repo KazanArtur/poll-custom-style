@@ -1,27 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
+/* Головний блок */
 .custom {
 	background: transparent;
-	width: 450px;
+	width: 500px;
 	transition: opacity 1s;
 	padding: 10px;
 	font-family: 'Permanent Marker', cursive;
 	opacity: 0;
 }
 
+/* Показати, коли активний */
 .custom.active,
 .custom.finished {
 	opacity: 1;
 }
 
-/* Інфо */
+/* Заголовок (питання) — як у референсі */
+.custom .options li.question {
+	background: #000;
+	color: #ADFF2F; /* лаймово-зелений */
+	font-size: 32px;
+	text-align: center;
+	border: 5px solid #ff00ff; /* рожева рамка */
+	padding: 20px;
+	box-shadow: 4px 4px 0 #ff00ff;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+/* Варіанти відповідей */
+.custom .options li {
+	position: relative;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 22px;
+	color: #000;
+	padding: 15px 20px;
+	margin-bottom: 12px;
+	border: 4px solid #000;
+	box-shadow: 3px 3px 0 #000;
+	text-align: center;
+	text-transform: uppercase;
+	transition: transform 0.2s ease;
+}
+
+/* Кольорові фони */
+.custom .options li:nth-child(2) {
+	background: #ffc6ff; /* рожевий */
+}
+.custom .options li:nth-child(3) {
+	background: #a0c4ff; /* блакитний */
+}
+.custom .options li:nth-child(4) {
+	background: #fdffb6; /* жовтий */
+}
+.custom .options li:nth-child(5) {
+	background: #caffbf; /* лайм */
+}
+.custom .options li:nth-child(6) {
+	background: #ffadad; /* червоний */
+}
+
+.custom .options li:hover {
+	transform: rotate(-1deg) scale(1.03);
+}
+
+/* Сховати номери та прогрес */
+.custom .options li .number,
+.custom .options li .bar,
+.custom .options li .procent {
+	display: none;
+}
+
+/* Help */
+.custom .options li.help {
+	background: #ffd6a5;
+	text-align: center;
+	overflow: hidden;
+	height: 0;
+}
+.custom.active .options li.help {
+	height: 35px;
+}
+.custom .options li.help span {
+	display: block;
+	padding: 10px;
+}
+
+/* Meta info (таймери тощо) */
 .custom .metaInfo {
 	background: #ffec99;
 	border: 3px dashed #000;
 	padding: 10px;
 	color: #222;
 }
-
 .custom .total,
 .custom .duration {
 	background: #ffe066;
@@ -34,112 +106,14 @@
 	border: 2px dashed #000;
 	box-shadow: 2px 2px 0 #000;
 }
-
 .custom .total strong,
 .custom .duration strong {
 	color: #d62828;
-	font-size: 24px;
+	font-size: 20px;
 	display: block;
 }
-
-/* Варіанти */
-.custom .options li {
-	position: relative;
-	border: 3px solid #000;
-	padding: 10px;
-	background: #a2d2ff;
-	color: #000;
-	text-overflow: ellipsis;
-	padding-right: 55px;
-	padding-left: 55px;
-	font-size: 16px;
-	margin-bottom: 10px;
-	box-shadow: 3px 3px 0 #000;
-	transition: transform 0.2s ease;
-}
-
-.custom .options li:hover {
-	transform: scale(1.02) rotate(-0.5deg);
-}
-
-.custom .options li.question {
-	background: #ffadad;
-	font-size: 22px;
-	color: #000;
-	text-align: center;
-	box-shadow: 3px 3px 0 #000;
-}
-
-.custom .options li.help {
-	background: #ffd6a5;
-	text-align: center;
-	overflow: hidden;
-	height: 0;
-}
-
-.custom .options li.help span {
-	display: block;
-	padding: 10px;
-}
-
-.custom.active .options li.help {
-	height: 35px;
-}
-
-/* Результати */
-.custom .options li .procent {
-	position: absolute;
-	top: 10px;
-	right: 15px;
-	color: #000;
-	font-weight: bold;
-}
-
-.custom .options li .number {
-	padding: 5px 10px;
-	background: #fcbf49;
-	border: 2px solid #000;
-	position: absolute;
-	top: 5px;
-	left: 10px;
-}
-
-.custom .options li .bar {
-	background: #f1faee;
-	height: 7px;
-	margin-top: 5px;
-	border: 1px solid #000;
-}
-
-.custom .options li .bar .bar-inner {
-	background: #06d6a0;
-	height: 100%;
-	width: 0;
-	transition: width 1s;
-	position: relative;
-}
-
-/* Завершення */
-.custom.finished .options li,
-.custom.removing .options li {
-	opacity: 0.3;
-}
-
-.custom.finished .options li.highest,
-.custom.removing .options li.highest {
-	color: #000;
-	background: #caffbf;
-	opacity: 1;
-}
-
-.custom.finished .metaInfo,
-.custom.removing .metaInfo {
-	opacity: 0.2;
-}
-
-.custom.finished .options li.help,
-.custom.removing .options li.help {
-	height: 0;
+.custom .total {
+	margin-right: 2%;
 }
 
 /* Credits */
@@ -153,16 +127,36 @@
 	font-size: 12px;
 	color: #555;
 }
-
 .custom.active .credits,
 .custom.removing .credits {
 	height: 0;
 	opacity: 0;
 }
 
-/* Позиціонування (залиш стандартне) */
+/* Finished styles */
+.custom.finished .options li,
+.custom.removing .options li {
+	opacity: 0.3;
+}
+.custom.finished .options li.highest,
+.custom.removing .options li.highest {
+	color: #000;
+	background: #caffbf;
+	opacity: 1;
+}
+.custom.finished .metaInfo,
+.custom.removing .metaInfo {
+	opacity: 0.2;
+}
+.custom.finished .options li.help,
+.custom.removing .options li.help {
+	height: 0;
+}
+
+/* Позиціонування (можеш змінити, якщо треба) */
 .custom.middleRight {
 	top: 50%;
 	transform: translate(0, -50%);
 	right: 20px;
+	position: absolute;
 }
