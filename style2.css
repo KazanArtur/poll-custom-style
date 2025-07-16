@@ -192,3 +192,53 @@
 	right: 20px;
 	position: absolute;
 }
+/* === 🌈 Фарбування варіантів + ЗІГЗАГ === */
+.custom .options li:nth-child(2) {
+	background: #fff35c; /* Жовтий */
+	transform: rotate(-2deg);
+}
+.custom .options li:nth-child(3) {
+	background: #88e56f; /* Зелений */
+	transform: rotate(2deg);
+}
+.custom .options li:nth-child(4) {
+	background: #ff80c7; /* Рожевий */
+	transform: rotate(-3deg);
+}
+.custom .options li:nth-child(5) {
+	background: #75e4ff; /* Блакитний */
+	transform: rotate(1.5deg);
+}
+.custom .options li:nth-child(6) {
+	background: #ffae49; /* Помаранчевий */
+	transform: rotate(-2.5deg);
+}
+.custom .options li:nth-child(7) {
+	background: #c19eff; /* Фіолетовий */
+	transform: rotate(2deg);
+}
+
+/* 🖌️ Фломастерна шкала */
+.custom .options li .bar {
+	background: #f1faee;
+	height: 8px;
+	margin-top: 10px;
+	border: 2px solid #000;
+	box-shadow: inset 0 0 3px #000;
+	border-radius: 3px;
+}
+
+.custom .options li .bar .bar-inner {
+	background: repeating-linear-gradient(
+		-45deg,
+		#000,
+		#000 3px,
+		transparent 3px,
+		transparent 5px,
+		#000 6px
+	);
+	height: 100%;
+	width: 0;
+	transition: width 1s ease-out;
+	border-radius: 3px;
+}
