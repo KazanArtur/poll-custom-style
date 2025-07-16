@@ -1,3 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap');
+
+/* Контейнер голосування */
+.custom {
+	background: transparent;
+	width: 500px;
+	transition: opacity 1s;
+	padding: 10px;
+	font-family: 'Permanent Marker', cursive;
+	opacity: 0;
+	position: relative;
+}
+
+.custom.active,
+.custom.finished {
+	opacity: 1;
+}
+
+/* Заголовок — питання */
+.custom .options li.question {
+	background: #000;
+	color: #ff1b1c; /* криваво-червоний */
+	font-size: 36px;
+	text-align: center;
+	border: 5px dashed #ff00ff;
+	padding: 20px;
+	box-shadow: 5px 5px 0 #ff00ff;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+	font-family: 'Rock Salt', cursive;
+	transform: rotate(-2deg);
+}
+
 /* Варіанти відповідей */
 .custom .options li {
 	position: relative;
@@ -6,15 +39,21 @@
 	color: #000;
 	padding: 15px 20px;
 	margin-bottom: 16px;
-	border: 5px solid #000;
-	box-shadow: 3px 3px 0 #000;
 	text-align: center;
 	text-transform: uppercase;
 	transition: transform 0.2s ease;
-	background: #a0c4ff;
+	border: none;
+	background-clip: padding-box;
+	box-shadow: 3px 3px 0 #000;
+
+	/* Нерівні краї */
+	clip-path: polygon(
+		3% 0%, 97% 0%, 100% 10%, 100% 90%,
+		97% 100%, 3% 100%, 0% 90%, 0% 10%
+	);
 }
 
-/* Варіанти різного кольору */
+/* Кольори для варіантів */
 .custom .options li:nth-child(2) {
 	background: #ffc6ff;
 }
@@ -32,23 +71,31 @@
 }
 
 .custom .options li:hover {
-	transform: rotate(-1deg) scale(1.03);
+	transform: rotate(-2deg) scale(1.04);
 }
 
-/* Шкала прогресу */
+/* Шкала голосування */
 .custom .options li .bar {
-	background: #fff;
-	height: 8px;
-	margin-top: 8px;
-	border: 2px solid #000;
-	box-shadow: inset 0 0 3px #000;
+	background: transparent;
+	height: 12px;
+	margin-top: 10px;
+	border: none;
+	position: relative;
 }
 
 .custom .options li .bar .bar-inner {
-	background: #06d6a0; /* бірюзовий фломастер */
+	background: repeating-linear-gradient(
+		-45deg,
+		#06d6a0,
+		#06d6a0 4px,
+		#000 5px,
+		#06d6a0 6px
+	);
 	height: 100%;
 	width: 0;
 	transition: width 1s ease-out;
+	border-radius: 5px;
+	box-shadow: 0 0 3px #000;
 }
 
 /* Відсоток справа */
@@ -62,7 +109,7 @@
 	text-shadow: 1px 1px #fff;
 }
 
-/* Порядковий номер зліва */
+/* Номер зліва */
 .custom .options li .number {
 	padding: 4px 10px;
 	background: #fcbf49;
@@ -71,4 +118,93 @@
 	top: 10px;
 	left: 10px;
 	font-size: 14px;
+}
+
+/* Help-блок */
+.custom .options li.help {
+	background: #ffd6a5;
+	text-align: center;
+	overflow: hidden;
+	height: 0;
+}
+.custom.active .options li.help {
+	height: 35px;
+}
+.custom .options li.help span {
+	display: block;
+	padding: 10px;
+}
+
+/* Інфо-блок */
+.custom .metaInfo {
+	background: #ffec99;
+	border: 3px dashed #000;
+	padding: 10px;
+	color: #222;
+}
+.custom .total,
+.custom .duration {
+	background: #ffe066;
+	float: left;
+	width: 49%;
+	text-align: center;
+	padding: 10px;
+	margin: 10px 0;
+	line-height: 1.3;
+	border: 2px dashed #000;
+	box-shadow: 2px 2px 0 #000;
+}
+.custom .total strong,
+.custom .duration strong {
+	color: #d62828;
+	font-size: 20px;
+	display: block;
+}
+.custom .total {
+	margin-right: 2%;
+}
+
+/* Credits */
+.custom .credits {
+	text-align: center;
+	opacity: 1;
+	transition: all 1s;
+	height: 25px;
+	clear: both;
+	overflow: hidden;
+	font-size: 12px;
+	color: #555;
+}
+.custom.active .credits,
+.custom.removing .credits {
+	height: 0;
+	opacity: 0;
+}
+
+/* Finished style */
+.custom.finished .options li,
+.custom.removing .options li {
+	opacity: 0.3;
+}
+.custom.finished .options li.highest,
+.custom.removing .options li.highest {
+	color: #000;
+	background: #caffbf;
+	opacity: 1;
+}
+.custom.finished .metaInfo,
+.custom.removing .metaInfo {
+	opacity: 0.2;
+}
+.custom.finished .options li.help,
+.custom.removing .options li.help {
+	height: 0;
+}
+
+/* Позиціонування */
+.custom.middleRight {
+	top: 50%;
+	transform: translate(0, -50%);
+	right: 20px;
+	position: absolute;
 }
