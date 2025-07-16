@@ -112,16 +112,17 @@
 
 /* MetaInfo */
 .custom .metaInfo {
-	background: #ffec99;
-	border: 3px dashed #000;
-	padding: 10px;
-	color: #222;
+	display: none !important;
+	height: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	overflow: hidden !important;
 }
 
 .custom .total,
 .custom .duration {
 	background-image: url('https://kazanartur.github.io/poll-custom-style/green.png');
-	background-size: auto;
+	background-size: contain;
 	background-position: center;
 	float: left;
 	width: 49%;
