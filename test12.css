@@ -2,9 +2,6 @@
 
 .custom {
 	background: transparent;
-	background-image: url('https://kazanartur.github.io/poll-custom-style/green.png');
-	background-size: auto;
-	background-position: center;
 	width: 500px;
 	transition: opacity 1s;
 	padding: 10px;
@@ -123,15 +120,15 @@
 
 .custom .total,
 .custom .duration {
-	background: #ffe066;
+	background-image: url('https://kazanartur.github.io/poll-custom-style/green.png');
+	background-size: auto;
+	background-position: center;
 	float: left;
 	width: 49%;
 	text-align: center;
 	padding: 10px;
 	margin: 10px 0;
 	line-height: 1.3;
-	border: 2px dashed #000;
-	box-shadow: 2px 2px 0 #000;
 }
 
 .custom .total strong,
