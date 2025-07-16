@@ -31,13 +31,13 @@
 
 /* === Варіанти відповіді з картинками === */
 .custom .options li:nth-child(2) {
-	background-image: url('https://kazanartur.github.io/poll-custom-style/green.png');
+	background-image: url('https://kazanartur.github.io/poll-custom-style/pink.png');
 }
 .custom .options li:nth-child(3) {
-	background-image: url('https://kazanartur.github.io/poll-custom-style/green.png');
+	background-image: url('https://kazanartur.github.io/poll-custom-style/blue.png');
 }
 .custom .options li:nth-child(4) {
-	background-image: url('https://kazanartur.github.io/poll-custom-style/green.png');
+	background-image: url('https://kazanartur.github.io/poll-custom-style/yellow.png');
 }
 .custom .options li:nth-child(5) {
 	background-image: url('https://kazanartur.github.io/poll-custom-style/green.png');
